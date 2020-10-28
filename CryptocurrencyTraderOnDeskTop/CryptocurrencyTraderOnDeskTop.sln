@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyTraderOnDeskTop", "CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop.csproj", "{CBAC8CB9-D3F9-43F9-AC38-95B2F50D7971}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBAC8CB9-D3F9-43F9-AC38-95B2F50D7971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAC8CB9-D3F9-43F9-AC38-95B2F50D7971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAC8CB9-D3F9-43F9-AC38-95B2F50D7971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAC8CB9-D3F9-43F9-AC38-95B2F50D7971}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

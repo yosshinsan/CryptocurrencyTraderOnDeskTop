@@ -1,0 +1,6 @@
+C:\Users\y.arita\Documents\CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop\bin\Debug\CryptocurrencyTraderOnDeskTop.exe.config
+C:\Users\y.arita\Documents\CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop\bin\Debug\CryptocurrencyTraderOnDeskTop.exe
+C:\Users\y.arita\Documents\CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop\bin\Debug\CryptocurrencyTraderOnDeskTop.pdb
+C:\Users\y.arita\Documents\CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop\obj\Debug\CryptocurrencyTraderOnDeskTop.csprojResolveAssemblyReference.cache
+C:\Users\y.arita\Documents\CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop\obj\Debug\CryptocurrencyTraderOnDeskTop.exe
+C:\Users\y.arita\Documents\CryptocurrencyTraderOnDeskTop\CryptocurrencyTraderOnDeskTop\obj\Debug\CryptocurrencyTraderOnDeskTop.pdb
