@@ -40,6 +40,8 @@ namespace CryptocurrencyTraderOnDeskTop
 
         private static async Task<string> Get()
         {
+            //https://qiita.com/rawr/items/f78a3830d894042f891b
+
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("https://api.zaif.jp/api/1/currencies/btc");
             var  con = await response.Content.ReadAsStringAsync();
