@@ -16,20 +16,86 @@ namespace CryptocurrencyTraderOnDeskTop
 
         static void Main(string[] args)
         {
-            Console.WriteLine("開始");
+            //Console.WriteLine("開始");
 
-            Task t = Get();
-            Console.WriteLine("またない");
-            Console.WriteLine("またない");
-            Console.WriteLine("またない");
-            t.Wait();
-            Console.WriteLine("まったよ");
+            //Task t = Get();
+            //Console.WriteLine("またない");
+            //Console.WriteLine("またない");
+            //Console.WriteLine("またない");
+            //t.Wait();
+            //Console.WriteLine("まったよ");
 
 
 
-            Console.WriteLine("終了 ----------なにかキーを入力してください。----------");
-            Console.ReadKey();
+            //Console.WriteLine("終了 ----------なにかキーを入力してください。----------");
+            //Console.ReadKey();
+
+            HttpClient http = new HttpClient();
+            string apiKey = "";
+            string secret = "";
+            string uri = "";
+
+            Task <string> getVal = Send(http,apiKey,secret,uri);
+
         }
+
+        private static async Task<string> Send(HttpClient http, string apiKey, string secret, string uri)
+        {
+            //if (parameters == null)
+            //    parameters = new Dictionary<string, string>();
+
+            //// パラメータ文字列を作成
+            //var content = new FormUrlEncodedContent(parameters);
+            //string param = await content.ReadAsStringAsync();
+
+            // nonceにunixtimeを用いる
+            string nonce = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString();
+
+            //// POSTするメッセージを作成
+            //var uri = new Uri(http.BaseAddress, path);
+            //string message = nonce + uri.ToString() + param;
+
+            string message = nonce + uri;
+
+            // メッセージをHMACSHA256で署名
+            byte[] hash = new HMACSHA256(Encoding.UTF8.GetBytes(secret)).ComputeHash(Encoding.UTF8.GetBytes(message));
+            string sign = BitConverter.ToString(hash).ToLower().Replace("-", "");//バイト配列をを16進文字列へ
+
+            // HTTPヘッダをセット
+            http.DefaultRequestHeaders.Clear();
+            http.DefaultRequestHeaders.Add("ACCESS-KEY", apiKey);
+            http.DefaultRequestHeaders.Add("ACCESS-NONCE", nonce);
+            http.DefaultRequestHeaders.Add("ACCESS-SIGNATURE", sign);
+
+            // 送信
+            HttpResponseMessage res;
+            //if (method == "POST")
+            //{
+            //    res = await http.PostAsync(path, content);
+            //}
+            //else if (method == "GET")
+            //{
+            //    res = await http.GetAsync(path);
+            //}
+            //else
+            //{
+            //    throw new ArgumentException("method は POST か GET を指定してください。", method);
+            //}
+
+            res = await http.GetAsync(uri);
+
+
+            //返答内容を取得
+            string text = await res.Content.ReadAsStringAsync();
+
+            //通信上の失敗
+            if (!res.IsSuccessStatusCode)
+                return "";
+
+            return text;
+        }
+
+
 
         private static async Task waitm()
         {
